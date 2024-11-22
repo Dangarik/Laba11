@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 public class Main {
     public static void main(String[] args) {
-        Product product1 = new Product("Пиво", 55.0);
+        Product product1 = new Product("Квас", 55.0);
         Product product2 = new Product("Сухарики", 23.0);
 
         Store store1 = new Store("ATB");
@@ -25,7 +25,7 @@ public class Main {
         double minPriceSuhariki = service.findMinPrice("Сухарики");
         System.out.println("Мінімальна ціна на Сухарики: " + minPriceSuhariki);
 
-        List<Store> storesWithMinPricePivo = service.findStoresWithMinPrice("Пиво", minPricePivo);
+        List<Store> storesWithMinPricePivo = service.findStoresWithMinPrice("Квас", minPricePivo);
         System.out.println("Магазини з мінімальною ціною на Пиво:");
         for (Store store : storesWithMinPricePivo) {
             System.out.println(store.getName());

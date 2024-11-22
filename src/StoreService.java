@@ -26,15 +26,16 @@ class StoreService {
 
     public List<Store> findStoresWithMinPrice(String productName, double minPrice) {
         List<Store> result = new ArrayList<>();
-        for (Store store : stores) {
-            if (store.getPriceForProduct(productName) != null &&
-                    store.getPriceForProduct(productName) == minPrice) {
+        Iterator iterator = stores.iterator();
+        while (iterator.hasNext()) {
+            Store store = (Store) iterator.next();
+            Double price = store.getPriceForProduct(productName);
+            if (price != null && price == minPrice) {
                 result.add(store);
             }
         }
         return result;
     }
-
 
     public boolean checkLessThanRecommendedPrice() {
         for (Store store : stores) {
